@@ -181,12 +181,12 @@ class CryptoCommand(sublime_plugin.TextCommand):
       if results:
         if enc:
           if ST3:
-            results = str(results, encoding)
+            results = str(results, encoding, 'replace')
           else:
-            results.encode( encoding )
+            results.encode(encoding)
         else:
           if ST3:
-            results = str(results, encoding)
+            results = str(results, encoding, 'replace')
           else:
-            results = results.decode( encoding )
+            results = results.decode(encoding, 'replace')
         self.view.replace(edit, region, results)
