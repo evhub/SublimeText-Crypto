@@ -144,7 +144,7 @@ def crypto(view, enc_flag, password, data):
       # skip WARNING's
       return result
     else:
-      panel(view.window(), 'Error: Wrong password?')
+      panel(view.window(), 'Error: ' + _err + ' (Wrong password?)')
     return False
 
   return result
