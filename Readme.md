@@ -10,27 +10,27 @@ This Package depends on `openssl`
 Install
 -------
 **Recommended:** Installation via the [Package Control](http://wbond.net/sublime_packages/package_control) (Search for `Crypto`)
-  
+
 To install manually clone this project into your `Sublime Text 2|3\Packages` folder:
 
 ### OSX
-**SublimeText 2**:   
+**SublimeText 2**:
 ```bash
 git clone git://github.com/mediaupstream/SublimeText-Crypto.git ~/Library/Application\ Support/Sublime\ Text\ 2/Packages/Crypto
 ```
 
-**SublimeText 3**:    
+**SublimeText 3**:
 ```bash
 git clone git://github.com/mediaupstream/SublimeText-Crypto.git ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/Crypto
 ```
 
 ### Windows
 
-**SublimeText 2**:   
+**SublimeText 2**:
 ```bash
 git clone git://github.com/mediaupstream/SublimeText-Crypto.git "%APPDATA%\Sublime Text 2\Packages\Crypto"
 ```
-**SublimeText 3**:   
+**SublimeText 3**:
 ```bash
 git clone git://github.com/mediaupstream/SublimeText-Crypto.git "%APPDATA%\Sublime Text 3\Packages\Crypto"
 ```
@@ -38,18 +38,19 @@ git clone git://github.com/mediaupstream/SublimeText-Crypto.git "%APPDATA%\Subli
 
 Usage
 -----
-After installation you will have:  
+After installation you will have:
 
-* Right-click menu item `Crypto` and `Tools > Crypto` with two options:  
+* Right-click menu item `Crypto` and `Tools > Crypto` with two options:
   - `Encrypt`
   - `Decrypt`
-* Default keyboard shortcuts:  
+* Default keyboard shortcuts:
   - `⌘+K,e` on OSX or `ctrl+K,e` on Linux/Windows (Encrypt)
   - `⌘+K,d` on OSX or `ctrl+K,d` on Linux/Windows (Decrypt)
-* Package Settings: `Preferences > Package Settings > Crypto`  
+* Package Settings: `Preferences > Package Settings > Crypto`
   - Set the path to your `openssl` executable - default: `openssl`
   - Set the Encryption Cipher - default: `-aes128`
   - Obfuscate the password input - default 'false'
+  - Use PBKDF2 key derivation - default 'false'
 
 **Note**:
 
@@ -59,12 +60,14 @@ If you choose to enable `obfuscate_password` please be aware that there is a bug
 
 The commands work on a selection, multiple selections or if nothing is selected the whole document. Once you trigger the command you will be prompted to enter a password.
 
+Earlier versions of the Crypto package used MD5 key derivation, the historical default for openssl, which is now considered broken and deprecated. To enable decryption of files that were encrypted using the old MD5 key derivation method, set the `use_pbkdf2` option to `false`.
+
 
 Author & Contributors
 ----------------------
-[Derek Anderson](http://twitter.com/derekanderson)  
-[Isaac Muse](https://github.com/facelessuser)  
-[Elliot Marsden](https://github.com/eddiejessup)  
+[Derek Anderson](http://twitter.com/derekanderson)
+[Isaac Muse](https://github.com/facelessuser)
+[Elliot Marsden](https://github.com/eddiejessup)
 [@circulosmeos](https://github.com/circulosmeos)
 
 
