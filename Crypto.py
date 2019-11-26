@@ -138,8 +138,9 @@ def crypto(view, enc_flag, password, data):
   # probably a wrong password was entered
   if error:
     _err = error.splitlines()[0]
+    print("Crypto error log: " + repr(error))
     if ST3:
-      _err = str(_err)
+      _err = _err.decode("utf-8")
     if _err.find('unknown option') != -1:
       panel(view.window(), 'Error: ' + _err)
     elif _err.find("WARNING") != -1:
